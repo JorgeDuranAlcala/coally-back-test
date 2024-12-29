@@ -1,6 +1,6 @@
-import { Validator } from "../../../../libs/Validator/validator";
+import { taskService } from "src/application/services/Task";
 import { TaskController } from "./task-controller";
-import { taskService } from "../../../../application/services/Task";
+import { Validator } from "src/libs/Validator/validator";
 
 const validator = Validator.create();
 export const taskController = new TaskController(taskService, validator);
