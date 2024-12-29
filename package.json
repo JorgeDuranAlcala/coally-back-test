@@ -14,7 +14,8 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc --write src/**/*.ts",
-    "clean-build": "rimraf ./dist"
+    "clean-build": "rimraf ./dist",
+    "start:app": "cross-env NODE_ENV=production node ./dist/main.js"
   },
   "keywords": [],
   "author": "",
