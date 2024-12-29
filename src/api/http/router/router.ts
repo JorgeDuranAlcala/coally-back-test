@@ -1,9 +1,8 @@
 import { IRouter, Router } from "express";
 import { IHTTPRouter } from "./IRouter";
 import { IUserController } from "../controllers/user-controller/IUserController";
-import { AuthMiddleware } from "../middlewares/auth-middleware";
-import { IAuthMiddleware } from "@src/domain/middlewares/auth-middleware.interface";
 import { ITaskController } from "../controllers/task-controller/ITaskController";
+import { IAuthMiddleware } from "src/domain/middlewares/auth-middleware.interface";
 
 export class HTTPRouter implements IHTTPRouter {
   private readonly _router;

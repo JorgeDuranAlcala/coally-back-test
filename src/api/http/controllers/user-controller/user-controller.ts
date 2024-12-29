@@ -1,10 +1,10 @@
+import { IValidator } from "src/libs/Validator/IValidator";
 import { BaseController } from "../base-controller";
 import { IUserController } from "./IUserController";
-import { IValidator } from "@src/libs/Validator/IValidator";
 import { NextFunction, Request, Response } from "express";
-import { CreateUserDto } from "@src/application/dtos/createUserDto";
-import { IUserService } from "@src/domain/application/user.service.interface";
-import { LoginUserDto } from "@src/application/dtos/loginUserDto";
+import { IUserService } from "src/domain/application/user.service.interface";
+import { CreateUserDto } from "src/application/dtos/createUserDto";
+import { LoginUserDto } from "src/application/dtos/loginUserDto";
 
 
 /**

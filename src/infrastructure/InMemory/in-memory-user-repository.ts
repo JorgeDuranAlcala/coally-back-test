@@ -1,7 +1,7 @@
-import { CreateUserDto } from '@src/domain/dto/createUserDto';
-import { IUserRepository } from '@src/domain/infrastructure/user.repository';
-import { UserModel } from '@src/domain/models/user.model';
-import { IUser } from '@src/domain/types/user.interface';
+import { CreateUserDto } from "src/domain/dto/createUserDto";
+import { IUserRepository } from "src/domain/infrastructure/user.repository";
+import { UserModel } from "src/domain/models/user.model";
+import { IUser } from "src/domain/types/user.interface";
 
 export class InMemoryUserRepository implements IUserRepository {
   private users: Map<string, IUser> = new Map();

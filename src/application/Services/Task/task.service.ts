@@ -1,9 +1,8 @@
-import { ITaskService } from "@src/domain/application/task-service.interface";
-import { CreateTaskDto } from "@src/domain/dto/createTaskDto";
-import { ITaskRepository } from "@src/domain/infrastructure/task.repository";
-import { TaskModel } from "@src/domain/models/task-model";
-import { NotFoundError } from "@src/libs/Error/NotFound";
-
+import { ITaskService } from "src/domain/application/task-service.interface";
+import { CreateTaskDto } from "src/domain/dto/createTaskDto";
+import { ITaskRepository } from "src/domain/infrastructure/task.repository";
+import { TaskModel } from "src/domain/models/task-model";
+import { NotFoundError } from "src/libs/Error/NotFound";
 
 export class TaskService implements ITaskService {
   constructor(private readonly taskRepository: ITaskRepository) {}

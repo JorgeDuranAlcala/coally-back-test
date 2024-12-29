@@ -8,7 +8,7 @@ import { swaggerDocs } from "./swagger";
 import dotenv from "dotenv";
 import cors from 'cors'
 import morgan from 'morgan'
-import { connectDB } from "@src/config/database/mongo-connection";
+import { connectDB } from "src/config/database/mongo-connection";
 
 dotenv.config();
 

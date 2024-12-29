@@ -1,6 +1,6 @@
-import { HTTP_STATUS_CODE } from "@src/constants/http";
-import { ExtendableError } from "@src/libs/Error";
 import { Request, Response, NextFunction } from "express";
+import { HTTP_STATUS_CODE } from "src/constants/http";
+import { ExtendableError } from "src/libs/Error";
 
 export class ErrorHandler {
   private logError = (err: Error) => {

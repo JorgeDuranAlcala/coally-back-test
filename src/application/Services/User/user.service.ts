@@ -1,10 +1,10 @@
-import { IUserService } from '@src/domain/application/user.service.interface';
-import { CreateUserDto } from '@src/domain/dto/createUserDto';
-import { IUserRepository } from '@src/domain/infrastructure/user.repository';
-import { UserModel } from '@src/domain/models/user.model';
-import { InvalidPasswordError } from '@src/libs/Error/InvalidPassword';
-import { NotFoundError } from '@src/libs/Error/NotFound';
 import bcrypt from 'bcrypt'
+import { IUserService } from 'src/domain/application/user.service.interface';
+import { CreateUserDto } from 'src/domain/dto/createUserDto';
+import { IUserRepository } from 'src/domain/infrastructure/user.repository';
+import { UserModel } from 'src/domain/models/user.model';
+import { InvalidPasswordError } from 'src/libs/Error/InvalidPassword';
+import { NotFoundError } from 'src/libs/Error/NotFound';
 
 export class UserService implements IUserService {
   constructor(private readonly userRepository: IUserRepository) {}

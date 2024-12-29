@@ -1,10 +1,10 @@
-import { ITaskService } from '@src/domain/application/task-service.interface';
 import { BaseController } from '../base-controller';
 import { Request, Response, NextFunction } from 'express';
-import { CreateTaskDto } from '@src/application/dtos/createTaskDto';
-import { UpdateTaskDto } from '@src/application/dtos/updateTaskDto';
 import { ITaskController } from './ITaskController';
-import { IValidator } from '@src/libs/Validator/IValidator';
+import { ITaskService } from 'src/domain/application/task-service.interface';
+import { IValidator } from 'src/libs/Validator/IValidator';
+import { CreateTaskDto } from 'src/application/dtos/createTaskDto';
+import { UpdateTaskDto } from 'src/application/dtos/updateTaskDto';
 
 
 

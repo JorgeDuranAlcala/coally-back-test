@@ -1,5 +1,5 @@
-import { CreateUserDto } from '@src/domain/dto/createUserDto';
-import { UserModel } from '@src/domain/models/user.model';
+import { CreateUserDto } from "../dto/createUserDto";
+import { UserModel } from "../models/user.model";
 
 export interface IUserService {
   createUser(userData: CreateUserDto): Promise<UserModel>;

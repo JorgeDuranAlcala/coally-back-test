@@ -1,6 +1,6 @@
-import { IAuthMiddleware } from "@src/domain/middlewares/auth-middleware.interface";
 import { NextFunction, Request, Response } from "express";
 import jwt from 'jsonwebtoken'
+import { IAuthMiddleware } from "src/domain/middlewares/auth-middleware.interface";
 
 declare module "express-serve-static-core" {
   interface Request {

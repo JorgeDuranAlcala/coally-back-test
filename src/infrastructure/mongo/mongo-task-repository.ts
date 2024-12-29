@@ -1,7 +1,7 @@
-import { Task } from '@src/database/mongo/task-model';
-import { CreateTaskDto } from '@src/domain/dto/createTaskDto';
-import { ITaskRepository } from '@src/domain/infrastructure/task.repository';
-import { TaskModel } from '@src/domain/models/task-model';
+import { Task } from "src/database/mongo/task-model";
+import { CreateTaskDto } from "src/domain/dto/createTaskDto";
+import { ITaskRepository } from "src/domain/infrastructure/task.repository";
+import { TaskModel } from "src/domain/models/task-model";
 
 export class MongoTaskRepository implements ITaskRepository {
   private model: typeof Task;

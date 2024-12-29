@@ -1,4 +1,3 @@
-import { HTTP_STATUS_CODE } from "@src/constants/http";
 import {
   ClassConstructor,
   plainToInstance,
@@ -6,6 +5,7 @@ import {
 } from "class-transformer";
 /* eslint-disable no-unused-vars */
 import { NextFunction, Response, Request } from "express";
+import { HTTP_STATUS_CODE } from "src/constants/http";
 
 export type ControllerExpressMethod<T> = (
   req: Request,
