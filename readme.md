@@ -1,78 +1,80 @@
-<h1 align="center"> API de users </h1>
+<h1 align="center"> Task Manager API </h1>
 <p>
-  Prueba tecnica backend Node.js
+	Technical test for backend Node.js
 </p>
 
-## Pensamientos
+## Thoughts
 
-Primero que todo quiero explicar mi proceso de pensamiento el cual fue completamente basado (aunque no en su totalidad) en lo aprendido en leer el libro del bastante conocido "Uncle bob" llamado Clean Architecture y por supuesto los principios del DDD (Domain-Driven-Design), Al principio considere esta solucion algo ariesgada de implementar ya que toma un tiempo considerable de energia en planificar lo que se va a estructurar en el codigo, pero apesar de todo me siento muy orgulloso con el resultado, trata de enfocarme mas en la escalabilidad del proyecto y que basicamente fuera Framework-Agnostic, y tambien en la calidad de los test tanto Unit-tests como Integration-tests.
+First of all, I want to explain my thought process, which was largely based (though not entirely) on what I learned from reading the well-known book "Clean Architecture" by Uncle Bob, and of course, the principles of DDD (Domain-Driven-Design). Initially, I considered this solution somewhat risky to implement as it takes a considerable amount of energy to plan what will be structured in the code. However, despite everything, I feel very proud of the result. I tried to focus more on the scalability of the project and making it Framework-Agnostic, as well as on the quality of the tests, both Unit-tests and Integration-tests.
 
-## Filosofia
+## Philosophy
 
-la filosofia detras de esta solucion es tener un proyecto que sea altamente mantenible e extensible en el tiempo mientras las funcionalidades van creciendo, y por supuesto seguir los aspectos mas importantes de los principios SOLID.
+The philosophy behind this solution is to have a project that is highly maintainable and extensible over time as functionalities grow, and of course, to follow the most important aspects of the SOLID principles.
 
-## architecture
+## Architecture
 
 <img src="./assets/onion-architecture.png"  alt="onion-architecture"/>
 
-## Instalacion
+## Installation
 
-debes tener instalado [node.js](https://nodejs.org/en/) para poder ejecutar el proyecto.
+You must have [node.js](https://nodejs.org/en/) installed to run the project.
 
-## Como correr el proyecto
+## env variables
+check the varibles in the .env.example file
 
-### clona el repositorio
+## How to run the project
 
-```bash
-  git clone https://github.com/JorgeDuranAlcala/prueba-tecnica-backend.git
-```
-
-### variables de entorno (OPCIONAL)
-
-opcionalmente puedes crear un archivo .env en el cual agregar la variables de entorno como la version de la api
+### Clone the repository
 
 ```bash
-  API_VERSION=1
+	git clone https://github.com/JorgeDuranAlcala/task-manager-api.git
 ```
 
-### importante
+### Environment variables (OPTIONAL)
 
-Las rutas cambiaran dependiendo si decidiste añadir el archivo .env, si no añadiste la variable API_VERSION en el .env, la ruta sera del siguiente modo por defecto:
+Optionally, you can create a .env file in which to add environment variables such as the API version
 
 ```bash
-[domain-name | http://localhost:4000]/api/vbeta/
+	API_VERSION=1
 ```
 
-### install dependencies
+### Important
+
+The routes will change depending on whether you decided to add the .env file. If you did not add the API_VERSION variable in the .env, the route will be as follows by default:
+
+```bash
+[domain-name | http://localhost:4000]/api/v1/
+```
+
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-## Inicializacion
+## Initialization
 
 ```bash
-  npm run start:dev
+	npm run start:dev
 ```
+
 ## API Documentation 
 
 ```bash
 [domain-name | http://localhost:4000]/api-docs
 ```
 
-## production
+## Production
 
 ```bash
-  npm run start
+	npm run start
 ```
 
-## Correr tests
+## Run tests
 
 ```bash
-  npm run test
+	npm run test
 ```
-
-
 
 ## External dependencies
 
@@ -89,24 +91,4 @@ npm install
 - reflect-metadata
 - ts-node
 
-## Usage
-
-##### importante
-
-```bash
-/POST "[domain-name]/api/vbeta/users",
-```
-
-#### Body format
-
-```javascript
-{
-				nombre: "Jorge",
-				segundo_nombre: "Luis",
-				apellido_paterno: "Duran",
-				apellido_materno: "Alcala",
-				fecha_de_nacimiento: "20 junio 2001",
-				email: "jorgeluis20.duran@gmail.com",
-				telefono: "+584267472629",
-}
 ```

@@ -64,12 +64,12 @@ export class ExpressApp implements IApp {
   private async initRoutes(): Promise<void> {
    const router = this._router.get();
     this._app.use(`/api/v${this._app.get("api-version")}`, router);
-    if (process.env.NODE_ENV === "dev") {
+    if (process.env.NODE_ENV === "development") {
       const sd = await importSwagger();
       sd.swaggerDocs(this._app, this._app.get("port"));
     }
     this._app.use("*", this._errorHandler.NOT_FOUND_ROUTE_HANDLER);
-    if (process.env.NODE_ENV === "dev")
+    if (process.env.NODE_ENV === "development")
       this._app.use(this._errorHandler.logErrorMiddleware);
     this._app.use(this._errorHandler.returnError);
   }
