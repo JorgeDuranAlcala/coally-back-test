@@ -14,8 +14,11 @@ const config: Config.InitialOptions = {
   transform: {
     "^.+\\ts?$": "ts-jest",
   },
+
   moduleNameMapper: {
-    "src/(.*)": "<rootDir>/src/$1",
+
+    "^@src/(.*)$": "<rootDir>/src/$1"
+
   },
   moduleDirectories: ["node_modules", "src"],
   // The directory where Jest should store its cached dependency information
@@ -116,7 +119,7 @@ const config: Config.InitialOptions = {
   // resetModules: false,
 
   // A path to a custom resolver
-  // resolver: undefined,
+  //resolver: undefined,
 
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,

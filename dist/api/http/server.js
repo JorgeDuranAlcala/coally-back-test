@@ -84,10 +84,8 @@ class ExpressApp {
         return __awaiter(this, void 0, void 0, function* () {
             const router = this._router.get();
             this._app.use(`/api/v${this._app.get("api-version")}`, router);
-            if (process.env.NODE_ENV === "development") {
-                const sd = yield importSwagger();
-                sd.swaggerDocs(this._app, this._app.get("port"));
-            }
+            const sd = yield importSwagger();
+            sd.swaggerDocs(this._app, this._app.get("port"));
             this._app.use("*", this._errorHandler.NOT_FOUND_ROUTE_HANDLER);
             if (process.env.NODE_ENV === "development")
                 this._app.use(this._errorHandler.logErrorMiddleware);
