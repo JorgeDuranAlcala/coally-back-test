@@ -8,6 +8,7 @@ import { swaggerDocs } from "./swagger";
 import dotenv from "dotenv";
 import cors from 'cors'
 import morgan from 'morgan'
+import { connectDB } from "@src/config/database/mongo-connection";
 
 dotenv.config();
 
@@ -36,9 +37,12 @@ export class ExpressApp implements IApp {
     return instance;
   }
 
-  public start() {
+  public async start() {
     const port = this._app.get("port");
     const httpServer = createServer(this._app);
+
+    await connectDB();
+
     httpServer.listen(port, () => {
       console.log(`Server running on port ${port}`);
     });
@@ -46,7 +50,7 @@ export class ExpressApp implements IApp {
 
   private settings(): void {
     this._app.set("port", process.env.PORT || 4000);
-    this._app.set("api-version", process.env.API_VERSION || "beta");
+    this._app.set("api-version", process.env.API_VERSION || "1");
   }
 
   private middlewares(): void {
@@ -58,7 +62,7 @@ export class ExpressApp implements IApp {
   }
 
   private async initRoutes(): Promise<void> {
-    const router = this._router.get();
+   const router = this._router.get();
     this._app.use(`/api/v${this._app.get("api-version")}`, router);
     if (process.env.NODE_ENV === "dev") {
       const sd = await importSwagger();

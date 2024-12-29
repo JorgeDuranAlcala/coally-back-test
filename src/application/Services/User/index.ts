@@ -1,9 +1,8 @@
-import { UserService } from "./user-service";
-import { inMemoryUserRepo } from "@src/infrastructure/userRepository";
-import dotenv from "dotenv";
-import { sqlUserRepo } from "@src/infrastructure/userRepository/";
-dotenv.config();
+import { MongoUserRepository } from "@src/infrastructure/mongo/mongo-user-repository";
+import { UserService } from "./user.service";
+import { InMemoryUserRepository } from "@src/infrastructure/InMemory/in-memory-user-repository";
 
-export const userService = UserService.create(
-  process.env.NODE_ENV !== "test" ? sqlUserRepo : inMemoryUserRepo
-);
+const userRepository = process.env.NODE_ENV === 'test' ? new InMemoryUserRepository() : new MongoUserRepository();
+const userService = new UserService(userRepository);
+
+export { userService };

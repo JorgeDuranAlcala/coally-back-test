@@ -4,7 +4,9 @@ import { router } from "../../src/api/http/router";
 import { ExpressApp } from "../../src/api/http/server";
 import { HTTP_STATUS_CODE } from "../../src/constants/http";
 
-describe("users endpoints", () => {
+process.env.NODE_ENV = "test";
+
+describe("users controller endpoints", () => {
   let request: supertest.SuperTest<supertest.Test>;
   let base_url: string;
 
@@ -15,34 +17,49 @@ describe("users endpoints", () => {
     base_url = `/api/v${api_version}`;
   });
 
-  describe("/POST /users", () => {
+  describe("/POST /register", () => {
 
-    test("should create a user", async () => {
-			const body = {
-				nombre: "Jorge",
-				segundo_nombre: "Luis",
-				apellido_paterno: "Duran",
-				apellido_materno: "Alcala",
-				fecha_de_nacimiento: "20 junio 2001",
-				email: "jorgeluis20.duran@gmail.com",
-				telefono: "+584267472629",
-			}
-      const res = await request.post(`${base_url}/users`).send(body);
+    test("should register a user", async () => {
+      const body = {
+        name: "Jorge",
+        email: "jorgeluis23.duran@gmail.com",
+        password: "Luna$202"
+      }
+      const res = await request.post(`${base_url}/register`).send(body);
       expect(res.statusCode).toEqual(HTTP_STATUS_CODE.OK);
       expect(res.body).toBeDefined();
-      expect(res.body.user.nombre).toEqual(body.nombre);
+      expect(res.body.user.name).toEqual(body.name);
     });
 
     test("should throw an Error when wrong body is passed", async () => {
-			const body = {
-				nombre: "Jorge",
-				segundo_nombre: "Luis",
-				apellido_paterno: "Duran",
-				apellido_materno: "Alcala",
-				fecha_de_nacimiento: "20 junio 2001",
-				email: "jorgeluis20.duran@gmail.com",
-			}
-      const res = await request.post(`${base_url}/users`).send(body);
+      const body = {
+        email: "jorgeluis20.duran@gmail.com",
+        password: "Luna$202"
+      }
+      const res = await request.post(`${base_url}/register`).send(body);
+      expect(res.statusCode).toEqual(HTTP_STATUS_CODE.MALFORMED_DATA);
+    });
+
+  });
+
+  describe("/POST /login", () => {
+
+    test("should login a user", async () => {
+      const body = {
+        email: "jorgeluis23.duran@gmail.com",
+        password: "Luna$202"
+      }
+      const res = await request.post(`${base_url}/login`).send(body);
+      expect(res.statusCode).toEqual(HTTP_STATUS_CODE.OK);
+      expect(res.body).toBeDefined();
+      expect(res.body.token).toBeDefined();
+    });
+
+    test("should throw an Error when wrong body is passed", async () => {
+      const body = {
+        email: "jorgeluis20.duran@gmail.com",
+      }
+      const res = await request.post(`${base_url}/login`).send(body);
       expect(res.statusCode).toEqual(HTTP_STATUS_CODE.MALFORMED_DATA);
     });
 
