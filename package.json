@@ -7,7 +7,7 @@
     "start:prod": "cross-env NODE_ENV=prod node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/main.js",
     "start:dev": "cross-env NODE_ENV=dev ts-node-dev -r tsconfig-paths/register src/main.ts",
     "start": "npm run build && npm run start:prod",
-    "build": "tsc",
+    "build": "npm run clean-build && tsc",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "npm run test -- --coverage",

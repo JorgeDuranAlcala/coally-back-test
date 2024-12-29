@@ -3,9 +3,7 @@ import { ErrorHandler } from "../../src/api/http/middlewares/error-handler";
 import { router } from "../../src/api/http/router";
 import { ExpressApp } from "../../src/api/http/server";
 import { HTTP_STATUS_CODE } from "../../src/constants/http";
-
 process.env.NODE_ENV = "test";
-
 describe("users controller endpoints", () => {
   let request: supertest.SuperTest<supertest.Test>;
   let base_url: string;
