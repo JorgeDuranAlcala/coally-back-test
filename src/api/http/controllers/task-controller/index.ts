@@ -1,4 +1,4 @@
-import { taskService } from "../../../../application/services/Task";
+import { taskService } from "src/application/services/Task";
 import { TaskController } from "./task-controller";
 import { Validator } from "src/libs/Validator/validator";
 
