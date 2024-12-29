@@ -1,10 +1,10 @@
 import bcrypt from 'bcrypt'
-import { IUserService } from 'src/domain/application/user.service.interface';
-import { CreateUserDto } from 'src/domain/dto/createUserDto';
-import { IUserRepository } from 'src/domain/infrastructure/user.repository';
-import { UserModel } from 'src/domain/models/user.model';
-import { InvalidPasswordError } from 'src/libs/Error/InvalidPassword';
-import { NotFoundError } from 'src/libs/Error/NotFound';
+import { IUserService } from '../../../domain/application/user.service.interface';
+import { CreateUserDto } from '../../..//domain/dto/createUserDto';
+import { IUserRepository } from '../../..//domain/infrastructure/user.repository';
+import { UserModel } from '../../..//domain/models/user.model';
+import { InvalidPasswordError } from '../../..//libs/Error/InvalidPassword';
+import { NotFoundError } from '../../..//libs/Error/NotFound';
 
 export class UserService implements IUserService {
   constructor(private readonly userRepository: IUserRepository) {}

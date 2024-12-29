@@ -1,6 +1,6 @@
-import { CreateTaskDto } from "src/domain/dto/createTaskDto";
-import { ITaskRepository } from "src/domain/infrastructure/task.repository";
-import { TaskModel } from "src/domain/models/task-model";
+import { CreateTaskDto } from "../../domain/dto/createTaskDto";
+import { ITaskRepository } from "../../domain/infrastructure/task.repository";
+import { TaskModel } from "../../domain/models/task-model";
 
 export class InMemoryTaskRepository implements ITaskRepository {
   private tasks: Map<string, TaskModel> = new Map();

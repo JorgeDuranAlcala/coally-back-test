@@ -1,8 +1,8 @@
-import { User } from "src/database/mongo/user-model";
-import { CreateUserDto } from "src/domain/dto/createUserDto";
-import { IUserRepository } from "src/domain/infrastructure/user.repository";
-import { UserModel } from "src/domain/models/user.model";
-import { IUser } from "src/domain/types/user.interface";
+import { User } from "../../database/mongo/user-model";
+import { CreateUserDto } from "../../domain/dto/createUserDto";
+import { IUserRepository } from "../../domain/infrastructure/user.repository";
+import { UserModel } from "../../domain/models/user.model";
+import { IUser } from "../../domain/types/user.interface";
 
 export class MongoUserRepository implements IUserRepository {
   private model: typeof User;

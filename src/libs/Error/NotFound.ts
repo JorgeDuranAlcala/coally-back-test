@@ -1,4 +1,5 @@
-import { HTTP_STATUS_CODE } from "src/constants/http";
+import { HTTP_STATUS_CODE } from "../../constants/http";
+
 import { ExtendableError } from ".";
 
 export class NotFoundError extends ExtendableError {

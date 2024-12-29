@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { IsBoolean, IsEmail, IsString, MinLength, Validate } from 'class-validator';
-import { IsPasswordStrong } from 'src/libs/Validator/pass-is-strong';
+import { IsPasswordStrong } from '../../libs/Validator/pass-is-strong';
 
 export class CreateUserDto {
   @Expose()
